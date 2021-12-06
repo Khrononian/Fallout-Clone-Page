@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" width="device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css" type="text/css">
-        <link rel="icon" href="icons/pipboy.png">
+        <link rel="icon" href="icons/vaultboy.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     </head>
     <body>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="right-bottom">
                     <img class="nav-img" alt="First" src="https://images.ctfassets.net/rporu91m20dc/1a58Ukec5jEiQP4LaQw6tx/a598eaf30bc2f04a47e127ff417bd89f/FALLOUT76_Fallout1st_Icon_2C_nav.png?q=70&&&fm=webp">
-                    <button class="download-btn nav-btn">Download the Bethesda 
+                    <button class="download-btn nav-btn">Download the Bethesda<br> 
                     Launcher (PC)</button>
                     <button class="buy-now nav-btn">Buy Now</button>
                 </div>
@@ -58,21 +58,21 @@
             </div>
         </header>
         <main>
-            <section>
+            <section class="section-contain">
                 <div class="fallout-roadmap">
-                    <h5>Fallout 76: 2021 Roadmap</h5>
+                    <h5 class="h5">Fallout 76: 2021 Roadmap</h5>
                     <img class="roadmap-img" src="https://images.ctfassets.net/rporu91m20dc/4AxVfJ0dOJUOd4M1V2OVSm/f8380ba04e9f33133252bd2dafece509/Fallout76_2021_Roadmap_Full_REVISED-EN-07.jpg" alt="Roadmap for Fallout">
                 </div>
                 <div class="fallout-news">
-                    <h5>News</h5>
+                    <h5 class="h5">News</h5>
                     <div class="news-grid">
                         <div class="grid">
                             <img class="grid-imgs" src="https://images.ctfassets.net/rporu91m20dc/12ciqJVQ4itUVoD0vmlJYr/783358452d6ae9fa85b0baa309d07ac1/76_MobileCard_Season7_ZorbosRevenge_Keyart_633x424.jpg?w=776&h=470&fit=fill&q=70&&&fm=webp" alt="Zorbo's Revenge">
-                            <a href="" target="_blank"<h3>Fallout 76: Inside the Vault - Season 7 Scoreboard, Rewards & Community Calendar</h3></a>
+                            <a href="" target="_blank"><h3>Fallout 76: Inside the Vault - Season 7 Scoreboard, Rewards & Community Calendar</h3></a>
                             <div class="grid-row">
-                                <p class="news">News</p>
-                                <p class="fallout">Fallout 76</p>
-                                <p class="date">December 2, 2021</p>
+                                <p class="news padded-link">News</p>
+                                <p class="fallout link padded-link">Fallout 76</p>
+                                <p class="date link">December 2, 2021</p>
                             </div>
                             <p class="grid-info">This week, we're diving into Fallout 76 Season 7 with previews of the
                             new Scoreboard, rewards, allies, and more. We're also sharing s new Community Calendar.
@@ -82,9 +82,9 @@
                             <img class="grid-imgs" src="https://images.ctfassets.net/rporu91m20dc/6ukupnxvwZfZApCmhNGRhP/99741adb2ecd53a9d7c8fc56359be92d/76_Holiday_SittingRoom_Bundle_633x424.jpg?w=776&h=470&fit=fill&q=70&&&fm=webp" alt="Atomic Shop">
                             <a href="" target="_blank"><h3>Atomic Shop Weekly Update: November 30 - December 8</h3></a>
                             <div class="grid-row">
-                                <p class="news">News</p>
-                                <p class="fallout">Fallout 76</p>
-                                <p class="date">November 30, 2021</p>
+                                <p class="news padded-link">News</p>
+                                <p class="fallout link padded-link">Fallout 76</p>
+                                <p class="date link">November 30, 2021</p>
                             </div>
                             <p class="grid-info">Read on to catch a preview of the latest and greatest items and offers that
                             are currently available in the Atomic Shop, including this week's free itmes.
@@ -94,9 +94,9 @@
                             <img class="grid-imgs" src="https://images.ctfassets.net/rporu91m20dc/5wPsiKRLGC9Zf3XCFhUJk2/d696e6c1b4613e951d6348598fb4bc68/76_ATX_4RidersPA_500x300.jpg?w=776&h=470&fit=fill&q=70&&&fm=webp" alt="Atomic Shop Weekly Update">
                             <a href="" target="_blank"><h3>Fallout 76: Inside the Vault - Season 7 Scoreboard, Rewards & Community Calendar</h3></a>
                             <div class="grid-row">
-                                <p class="news">News</p>
-                                <p class="fallout">Fallout 76</p>
-                                <p class="date">November 30, 2021</p>
+                                <p class="news padded-link">News</p>
+                                <p class="fallout link padded-link">Fallout 76</p>
+                                <p class="date link">November 30, 2021</p>
                             </div>
                             <p class="grid-info">Read on to catch a preview of the latest and greatest items and offers that
                             are currently available in the Atomic Shop, including this week's free itmes.
@@ -104,14 +104,17 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section>
                 <div class="news-updates">
-                    <h3>Stay Up To Date!</h3>
-                    <p class="dated-info">Be the first to see new videos, screenshots and updates, plus
-                    exlusive promotional dispatches and so much more.
-                    </p>
-                    <button class="dated-btn">Login & Connect</button>
+                    <div class="news-left">
+                        <h3>Stay Up To Date!</h3>
+                        <p class="dated-info">Be the first to see new videos, screenshots and updates, plus
+                        exlusive promotional dispatches and so much more.
+                        </p>
+                        <button class="dated-btn">Login & Connect</button>
+                    </div>
+                    <div class="news-right">
+                        <img class="updates-img" src="http://assets.stickpng.com/images/58f3750ea4fa116215a9240b.png">
+                    </div>
                 </div>
             </section>
             <section>
@@ -126,13 +129,15 @@
                     <button class="announcement-btn">Learn More</button>
                 </div>
             </section>
-            <section>
+            <section class="socials-section">
                 <div class="section-header">
                     <h5>From Your Friends At Vault-Tec</h5>
-                    <button class="social-btns"><i class="fab fa-twitter"></i></button>
-                    <button class="social-btns"><i class="fab fa-youtube"></i></button>
-                    <button class="social-btns"><i class="fab fa-reddit-alien"></i></button>
-                    <button class="social-btns"><i class="fab fa-discord"></i></button>
+                    <div class="socials">
+                        <button class="social-btns"><i class="fab fa-twitter social-btn"></i></button>
+                        <button class="social-btns"><i class="fab fa-youtube social-btn"></i></button>
+                        <button class="social-btns"><i class="fab fa-reddit-alien social-btn"></i></button>
+                        <button class="social-btns"><i class="fab fa-discord social-btn"></i></button>
+                    </div>
                 </div>
                 <div class="fallout-socials">
                     <div class="fallout-grids">
@@ -143,26 +148,26 @@
         </main>
         <footer>
             <div class="top-footer">
-                <div class="language">
+                <div class="top-flex">
                     <i class="fas fa-globe"></i>
-                    <h4>Please select your language</h4>
-                    <button class="language-select">English</button>
+                    <h4 class="footer-heading-section">Please select your language</h4>
+                    <button class="language-select top-btns">English</button>
                 </div>
-                <div class="bethesda-launcher">
+                <div class="top-flex">
                     <i class="fas fa-file-download"></i>
-                    <h4>Bethesda Launcher</h4>
+                    <h4 class="footer-heading-section">Bethesda Launcher</h4>
                     <div class="launcher-info">
                         <p>OS: WINDOWS 7 / 8 / 8.1 / 10</p>
                         <p>PROCESSOR: 2.5GHZ INTEL PENTIUM 4 / AMD ATHLON 64</p>
                         <p>RAM: 1GB, DISK SPACE: 250MB</p>
                     </div>
-                    <button class="download-btn">Download</button>
+                    <button class="download-btn top-btns">Download</button>
                 </div>
             </div>
             <div class="bottom-footer">
-                <div class="footer-lsit">
-                    <div class="explore-section">
-                        <h4>Explore</h4>
+                <div class="footer-list">
+                    <div class="explore-section bottom-flex">
+                        <h4 class="footer-list-section">Explore</h4>
                         <ul>
                             <li><a href="">Home</a></li>
                             <li><a href="">Games</a></li>
@@ -173,16 +178,16 @@
                             <li><a href="">Playtest</a></li>
                         </ul>
                     </div>
-                    <div class="support-section">
-                        <h4>Support</h4>
+                    <div class="support-section bottom-flex">
+                        <h4 class="footer-list-section">Support</h4>
                         <ul>
                             <li><a href="">Support Center</a></li>
                             <li><a href="">Manuals and Safety Docs</a></li>
                             <li><a href="">Status</a></li>
                         </ul>
                     </div>
-                    <div class="legal-section">
-                        <h4>Legal</h4>
+                    <div class="legal-section bottom-flex">
+                        <h4 class="footer-list-section">Legal</h4>
                         <ul>
                             <li><a href="">Privacy Policy</a></li>
                             <li><a href="">Terms of Service</a></li>
@@ -199,10 +204,12 @@
                     </div>
                 </div>
                 <div class="game-info">
-                    <h3>Bethesda</h3>
+                    <h4 class="footer-last-heading">Bethesda</h4>
                     <div class="game-rating">
-                        <img class="rating-img" src="https://esrbstorage.blob.core.windows.net/esrbcontent/images/privacy_certified_globe_color.gif">
-                        <img class="rating-img" src="https://images.ctfassets.net/rporu91m20dc/2V4yXBuQIowCGC4SCIOgQU/cdc18abdb22df2b7f518843abcd777f4/esrb_comp_rp-m__1_.png">
+                        <div class="rating-images">
+                            <img class="rating-img" src="https://esrbstorage.blob.core.windows.net/esrbcontent/images/privacy_certified_globe_color.gif">
+                            <img src="https://images.ctfassets.net/rporu91m20dc/2V4yXBuQIowCGC4SCIOgQU/cdc18abdb22df2b7f518843abcd777f4/esrb_comp_rp-m__1_.png">
+                        </div>
                         <div class="rating-list">
                             <ul>
                                 <li>Blood and Gore</li>
