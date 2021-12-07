@@ -23,6 +23,7 @@ body {
 nav {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 a {
@@ -81,11 +82,16 @@ a {
 
 .sign-in {
     background: transparent;
-    color: white;
-    padding: 1em 1.5em;
-    border: 1px solid white;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 1em 2em;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     margin-right: 1.3rem;
     cursor: pointer;
+}
+
+.sign-in:hover {
+    border:1px solid white;
+    color: white;
 }
 
 /* BOTTOM NAV */
@@ -100,12 +106,40 @@ a {
     padding: .8em;
 }
 
+.bottom-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.tags {
+    cursor: default;
+}
+
 .nav-tags {
     margin-right: 2rem;
     margin-left: 1rem;
     color: white;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-tags::after {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    content: ".";
+    width: 0%;
+    height: 1px;
+    color: transparent;
+    background: white;
+}
+
+.nav-tags:hover::after {
+    width: 100%;
 }
 
 .right-bottom {
@@ -128,6 +162,7 @@ a {
     text-transform: uppercase;
     font-weight: 700;
     font-size: .7rem;
+    letter-spacing: 2px;
 }
 
 .download-btn {
@@ -152,12 +187,13 @@ header {
 
 .slide-show {
     position: relative;
-    height: 427px;
+    height: 425px;
 }
 
 .img-slider {
     position: absolute;
-    bottom: 25%;
+    top: 50%;
+    transform: translateY(-50%);
     margin-left: 5rem;
     border: 1px solid red;
     width: 230px;
@@ -172,16 +208,18 @@ h1 {
     color: white;
     font-weight: 700;
     font-size: 1.7rem;
+    letter-spacing: 1.3px;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     text-align: left;
 }
 
 .slider-learn-btn {
-    padding: .5em 3em;
+    padding: .7em 3em;
     background: gold;
     text-align: center;
-    font-size: 1rem;
+    font-size: .8rem;
+    letter-spacing: 2px;
     text-transform: uppercase;
     border-color: transparent;
     font-family: 'Comfortaa';
@@ -201,9 +239,10 @@ h1 {
 
 .vault-promo {
     text-transform: uppercase;
-    font-size: .8rem;
+    font-size: .7rem;
     margin-left: 2rem;
     color: white;
+    letter-spacing: 3px;
 }
 
 .fab {
@@ -245,7 +284,7 @@ h1 {
 /* FALLOUT ROADMAP */
 
 .section-contain {
-    padding: 3em;
+    padding: 2em;
 }
 
 .roadmap-img {
@@ -260,6 +299,12 @@ h1 {
     text-transform: uppercase;
     margin-bottom: 2rem;
     font-weight: 700;
+}
+
+h5 {
+    letter-spacing: 3px;
+    font-size: .7rem;
+
 }
 
 /* FALLOUT NEWS */
@@ -358,6 +403,8 @@ h3 {
     text-transform: uppercase;
     padding: 1em 1.5em;
     cursor: pointer;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .updates-img {
@@ -367,9 +414,53 @@ h3 {
 
 /* ANNOUNCEMENTS */
 
+.announcement {
+    position: relative;
+    margin-bottom: 5em;
+}
+
 .imgs {
     width: 100%;
 }
+
+.announcement-overlay {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 420px;
+    color: white;
+    margin-left: 3rem;
+}
+
+.announcement-header {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.announcement-info {
+    margin: 1.5rem 0;
+}
+
+.announcement-btn {
+    background: goldenrod;
+    padding: 1em 3.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .75rem;
+    font-weight: 700;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+/* FALLOUT TWITTER */
+
+.fallout-grids {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
 
 
 /* SOCIALS SECTION */
@@ -383,32 +474,56 @@ h3 {
     justify-content: space-between;
     align-items: center;
     border-top: 3px solid #343434; 
-    border-bottom: 3px solid #343434;
-    border-right: 3px solid #343434;
+    border-bottom: 4px solid #343434;
+    border-right: 4px solid #343434;
     text-transform: uppercase;
     margin-bottom: 2rem;
+
 }
 
 .section-header > h5 {
     border: 0; 
     margin: 0;
-    padding-left: 1.3em;
+    padding-left: 1.5em;
 }
 
 .social-btns {
-    background: transparent;
     border-color: transparent;
+    margin: 0;
+    border: 0;
+    background: #343434;
+    padding: .1em .6em;
 }
 
 .social-btn {
-    background: #343434;
     border-color: transparent;
     cursor: pointer;
     padding: .5em;
 }
 
+.youtube-btn, .reddit-btn,
+.discord-btn {
+    background: transparent;
+}
+
+.youtube-btn > i, .reddit-btn > i,
+.discord-btn > i {
+    color: black;
+}
+
+.youtube-btn, .reddit-btn {
+    border-right: 4px solid #343434;
+}
+
 .socials {
     text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.socials > button > i {
+    margin: 0;
+
 }
 
 /* FOOTER TOP */
@@ -481,9 +596,12 @@ footer {
 
 .footer-list-section {
     border-bottom: 2px solid rgb(46, 46, 46);
-    padding-bottom: .7em;
+    padding-bottom: .9em;
     margin-bottom: .7rem;
     color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: .7rem;
 }
 
 ul > li {
@@ -493,7 +611,7 @@ ul > li {
 
 ul > li > a {
     color: #b3b3b3;
-    font-size: .8rem;
+    font-size: .75rem;
 }
 
 ul > li > a:hover {
