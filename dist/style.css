@@ -126,21 +126,7 @@ a {
     letter-spacing: 2px;
 }
 
-.nav-tags::after {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    content: ".";
-    width: 0%;
-    height: 1px;
-    color: transparent;
-    background: white;
-}
 
-.nav-tags:hover::after {
-    width: 100%;
-}
 
 .right-bottom {
     align-content: center;
