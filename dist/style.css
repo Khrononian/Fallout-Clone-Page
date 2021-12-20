@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap');
+@font-face {
+    font-family: Futura;
+    src: url('./fonts/futura/futur.ttf');
+}
+@font-face {
+    font-family: House-Slant;
+    src: url('./fonts/house-slant/HouseSlant-Regular.otf');
+}
 
 * {
     margin: 0;
@@ -9,15 +16,10 @@
 
 html {
     min-height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1617713965103-9fda56c89fad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-image: url('https://fallout.bethesda.net/images/texture-noise@1x.png?a0c79b628e080059654bab20a53c40fc');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-}
-
-body {
-    font-family: 'Comfortaa';
-    font-weight: 400;
 }
 
 nav {
@@ -139,7 +141,7 @@ input[type="checkbox"] {
 }
 
 .form-footer > button:hover {
-    background: cubic-bezier(0.4, 0, 0.2, 1)
+    background: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* TOP NAV */
 
@@ -168,10 +170,23 @@ input[type="checkbox"] {
 }
 
 .fa-bars, .fa-search,
-.fa-shopping-cart {
+.fa-shopping-cart, .fa-sign-in-alt {
     font-size: 1.3rem;
     color: white;
     cursor: pointer;
+}
+
+.bar-btn {
+    display: none;
+}
+
+.bottom-bar {
+    align-self: center;
+    font-size: 1.7rem;
+}
+
+.fa-sign-in-alt {
+    display: none !important;
 }
 
 .nav-header {
@@ -210,11 +225,115 @@ input[type="checkbox"] {
 .bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     background: black;
     background-image: url('https://media.istockphoto.com/photos/star-field-at-night-picture-id501655522?b=1&k=20&m=501655522&s=170667a&w=0&h=yxV0H4RLzwn_roNsSxejPhL0JAQl7YGguAeL1PtniZw=');
     background-repeat: repeat-x;
-    padding: .8em;
+    padding: .8em 1em;
+}
+
+.left-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* CHECK HERE */
+.dropdown-content { 
+    display: flex;
+    position: absolute;
+    min-height: 400px;
+    z-index: 1;
+    background: white;
+    background-image: url('https://media.istockphoto.com/photos/star-field-at-night-picture-id501655522?b=1&k=20&m=501655522&s=170667a&w=0&h=yxV0H4RLzwn_roNsSxejPhL0JAQl7YGguAeL1PtniZw=');
+    margin-top: .85rem;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+}
+
+.dropdown-games {
+    min-height: 350px;
+}
+
+.tags:hover + .dropdown-content {
+    visibility: unset;
+}
+
+.dropdown-content:hover {
+    visibility: unset;
+}
+
+.tags::after + .dropdown-content:hover {
+    width: 86%;
+    opacity: 1;
+}
+
+.content-info > p {
+    color: #D9D9D9;
+    font-size: .9rem;
+}
+
+.games > p {
+    font-family: Futura;
+    color: white;
+    text-align: center;
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.game-imgs {
+    width: 150px;
+}
+
+.content-games {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.dropdown:hover .content-info, .dropdown:hover .content-list {
+    display: flex;
+} 
+
+.content-info {
+    align-items: center;
+    padding: 1.1em;
+    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    width: 310px;
+    text-align: center;
+}
+
+.content-links {
+    flex-direction: column;
+    margin: auto 0 auto 1.1rem;
+}
+
+.links {
+    margin-bottom: 1.3rem;
+    color: white;
+    position: relative;
+    font-family: Futura;
+    font-size: .85rem;
+    letter-spacing: 2px;
+}
+
+.links::after {
+    transition: 300ms;
+    height: 2px;
+    width: 0%;
+    bottom: -6px;
+    left: 0;
+    content: "";
+    position: absolute;
+    background-color: white;
+    opacity: .1;
+}
+
+.links:hover::after {
+    width: 100%;
+    opacity: 1;
 }
 
 .bottom-fixed {
@@ -227,23 +346,33 @@ input[type="checkbox"] {
     cursor: default;
 }
 
+.fallout-tag {
+    background-image: url(https://fallout.bethesda.net/images/franchise-icon-fallout.svg?98e29f38c488e6515883e7dc257dd4b3);
+    text-indent: -9999px;
+    height: 40px;
+    width: 92.5px;
+    margin-left: 0;
+}
+
 .nav-tags {
-    margin-right: 2rem;
-    margin-left: 1rem;
+    margin-right: .5rem;
     color: white;
     text-transform: uppercase;
-    font-size: .75rem;
-    font-weight: 700;
+    font-family: Futura;
+    font-size: .7rem;
+    font-weight: 600;
     letter-spacing: 2px;
     position: relative;
+    border-color: transparent;
+    padding: 1.2em;
 }
 
 .nav-tags::after {
     transition: 300ms;
     height: 2px;
     width: 0%;
-    bottom: -6px;
-    left: 0;
+    bottom: 4px;
+    left: 10px;
     content: "";
     position: absolute;
     background-color: white;
@@ -251,7 +380,7 @@ input[type="checkbox"] {
 }
 
 .nav-tags:hover::after {
-    width: 100%;
+    width: 86%;
     opacity: 1;
 }
 
@@ -273,22 +402,43 @@ input[type="checkbox"] {
     align-items: center;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: 700;
+    font-family: Futura;
+    font-weight: 500;
     font-size: .7rem;
     letter-spacing: 2px;
 }
 
+.bottom-btn button {
+    display: block;
+}
+
+.bottom-btn {
+    height: 45px;
+    overflow: hidden;
+}
+
+.bottom-btn, .anim-btn {
+    transition: .2s;
+}
+
 .download-btn {
     background: transparent;
-    border: 2px solid gold;
-    color: gold;
-    font-family: 'Comfortaa';
+    border: 2px solid #DDB724;
+    color: #DDB724;
+}
+
+.anim-btn {
+    margin-top: -0.15em;
+}
+
+.bottom-btn:hover .anim-btn {
+    margin-top: -4.4em;
 }
 
 .buy-now {
-    background: goldenrod;
+    background: #DDB724;
     border-color: transparent;
-    font-family: 'Comfortaa';
+    margin-right: 0;
 }
 
 /* SLIDE SHOW */
@@ -301,17 +451,16 @@ header {
 
 .slide-show {
     position: relative;
-    height: 425px;
+    height: 450px;
+    display: flex;
 }
 
 .img-slider {
+    align-self: center;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 5rem;
+    margin-left: 7rem;
     border: 1px solid red;
     width: 230px;
-    text-align: center;
 }
 
 .slider-btns {
@@ -355,13 +504,18 @@ header {
 }
 
 .slider-img {
+    display: block;
     width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
 }
 
 h1 {
     color: white;
+    font-family: Futura;
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     letter-spacing: 1.3px;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
@@ -369,15 +523,15 @@ h1 {
 }
 
 .slider-learn-btn {
-    padding: .7em 3em;
+    padding: .9em 3em;
     background: gold;
     text-align: center;
     font-size: .8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-color: transparent;
-    font-family: 'Comfortaa';
-    font-weight: 700;
+    font-family: Futura;
+    font-weight: 600;
     width: 100%;
     cursor: pointer;
 }
@@ -393,6 +547,7 @@ h1 {
 
 .vault-promo {
     text-transform: uppercase;
+    font-family: Futura;
     font-size: .7rem;
     margin-left: 2rem;
     color: white;
@@ -450,6 +605,7 @@ h1 {
     border-top: 3px solid black; 
     border-bottom: 3px solid black;
     padding: 1.3em;
+    font-family: Futura;
     text-transform: uppercase;
     margin-bottom: 2rem;
     font-weight: 700;
@@ -458,7 +614,7 @@ h1 {
 h5 {
     letter-spacing: 3px;
     font-size: .7rem;
-
+    font-family: Futura;
 }
 
 /* FALLOUT NEWS */
@@ -469,7 +625,7 @@ h5 {
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
     grid-gap: 25px;
 }
 
@@ -492,6 +648,7 @@ h3 {
     text-transform: uppercase;
     color: black;
     font-size: 1.3rem;
+    font-family: Futura;
 }
 
 .grid-row {
@@ -539,8 +696,8 @@ h3 {
 }
 
 .news-updates > div > h3 {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 3rem;
+    font-family: House-Slant;
+    font-size: 4.75rem;
 }
 
 .news-left > h3 {
@@ -555,6 +712,7 @@ h3 {
     background: goldenrod;
     border-color: transparent;
     text-transform: uppercase;
+    font-family: Futura;
     padding: 1em 1.5em;
     cursor: pointer;
     letter-spacing: 2px;
@@ -566,48 +724,6 @@ h3 {
     margin-right: 7rem;
 }
 
-/* ANNOUNCEMENTS */
-
-.announcement {
-    position: relative;
-    margin-bottom: 5em;
-}
-
-.imgs {
-    width: 100%;
-}
-
-.announcement-overlay {
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
-    width: 420px;
-    color: white;
-    margin-left: 3rem;
-}
-
-.announcement-header {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-.announcement-info {
-    margin: 1.5rem 0;
-}
-
-.announcement-btn {
-    background: goldenrod;
-    padding: 1em 3.5em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: .75rem;
-    font-weight: 700;
-    border-color: transparent;
-    cursor: pointer;
-}
-
 /* FALLOUT TWITTER */
 
 .fallout-grids {
@@ -615,12 +731,10 @@ h3 {
     grid-template-columns: repeat(3, auto);
 }
 
-
-
 /* SOCIALS SECTION */
 
 .socials-section {
-    padding: 4em;
+    padding: 3em;
 }
 
 .section-header {
@@ -628,11 +742,9 @@ h3 {
     justify-content: space-between;
     align-items: center;
     border-top: 3px solid #343434; 
-    border-bottom: 4px solid #343434;
-    border-right: 4px solid #343434;
+    border-bottom: 3px solid #343434;
     text-transform: uppercase;
     margin-bottom: 2rem;
-
 }
 
 .section-header > h5 {
@@ -665,6 +777,10 @@ h3 {
     color: black;
 }
 
+.discord-btn {
+    border-right: 3px solid #343434;
+}
+
 .youtube-btn, .reddit-btn {
     border-right: 4px solid #343434;
 }
@@ -692,7 +808,7 @@ footer {
     padding: 4em 3em 1.5em 3em;
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     text-align: center;
     color: white;
 }
@@ -800,7 +916,7 @@ ul > li > a:hover {
 }
 
 .rating-list {
-    margin-left: .3rem;
+    margin-left: .6rem;
     font-size: .7rem;
 }
 
@@ -812,4 +928,148 @@ ul > li > a:hover {
 .copyright-info {
     color: #b3b3b3;
     font-size: .8rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 320px) {
+    .game-rating {
+        justify-content: start;
+    }
+}
+
+@media (max-width: 768px) {
+    /* NAV */
+
+    .nav-menu-btn {
+        margin-left: .5rem;
+    }
+
+    .right {
+        width: 100%;
+        justify-content: end;
+    }
+
+    .fa-sign-in-alt {
+        display: inline-block !important;
+    }
+
+    .right .fa-search,
+    .right .fa-shopping-cart {
+        margin-right: 2rem;
+    }
+
+    .dropdown, .left-bottom .nav-tag, 
+    .nav-img, .bottom-btn, .nav-btn {
+        display: none;
+    }
+
+    .bar-btn {
+        display: block;
+    }
+
+    .sign-in {
+        display: none;
+    }
+
+    .img-slider {
+        align-self: flex-end;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .inner-img-slider {
+        padding: 1em;
+    }
+
+    .slider-learn-btn {
+        max-width: 286px;
+    }
+
+    .img-slider h1 {
+        text-align: center;
+    }
+
+    .arrows {
+        display: none;
+    }
+
+    /* HEADER */
+
+    .slide-show-footer {
+        flex-direction: column;
+    }
+
+    .slide-show-footer > p {
+        margin: 0 0 1.1rem 0;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .social-icons .fab,
+    .social-icons a {
+        font-size: 1.5rem;
+        width: 100%;
+        margin: 0 .3rem;
+    }
+
+    /* FALLOUT NEWS */
+
+    .news-right {
+        display: none;
+    }
+
+    .news-updates {
+        padding: 1em;
+        text-align: center;
+    }
+
+    /* SOCIALS SECTION */
+
+    .section-contain {
+        padding: 4em 1em;
+    }
+
+    .socials-section {
+        padding: 2em 1em;
+    }
+
+    h5 {
+        padding: 1.5em 0;
+    }
+
+    .socials {
+        display: none;
+    }
+
+
+    /* FOOTER */
+    
+    .top-footer {
+        padding: 1em;
+    }
+
+    .top-flex {
+        margin-bottom: 5rem;
+    }
+
+    .bottom-footer {
+        padding: 1em;
+    }
+
+    .game-info, .game-info h4 {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .game-info {
+        justify-content: space-between;
+    }
 }
